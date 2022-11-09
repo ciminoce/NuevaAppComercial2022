@@ -17,6 +17,7 @@ namespace NuevaAppComercial2022.Windows
 
         private VentasServicios servicio;
         private ProductosServicios servicioProducto;
+        private ClientesServicios servicioCliente;
         private List<Venta> lista;
         private Venta venta;
         private DataGridViewRow r;
@@ -24,7 +25,7 @@ namespace NuevaAppComercial2022.Windows
         {
             servicio = new VentasServicios();
             servicioProducto = new ProductosServicios();
-            
+            servicioCliente = new ClientesServicios();
             RecargarGrilla();
         }
 
@@ -96,7 +97,12 @@ namespace NuevaAppComercial2022.Windows
                 venta = frm.GetVenta();
                 servicio.Guardar(venta);
                 RecargarGrilla();
+                venta.Cliente = servicioCliente.GetClientePorId(venta.ClienteId);
+                venta.Detalles = null;
+                venta.Detalles = servicio.GetDetalleVenta(venta.VentaId);
                 HelperMessage.Mensaje(TipoMensaje.OK, "Venta Guardada", "Mensaje");
+                HelperImprimir.ImprimirVenta(venta);
+
 
             }
             catch (Exception ex)
@@ -206,6 +212,27 @@ namespace NuevaAppComercial2022.Windows
             {
                 HelperMessage.Mensaje(TipoMensaje.Error, exception.Message, "ERROR");
             }
+        }
+
+        private void ImprimirIonButton_Click(object sender, EventArgs e)
+        {
+            if (DatosDataGridView.SelectedRows.Count==0)
+            {
+                return;
+            }
+            try
+            {
+                r = DatosDataGridView.SelectedRows[0];
+                venta = (Venta)r.Tag;
+                venta.Detalles = servicio.GetDetalleVenta(venta.VentaId);
+                HelperImprimir.ImprimirVenta(venta);
+
+            }
+            catch (Exception exception)
+            {
+                HelperMessage.Mensaje(TipoMensaje.Error, exception.Message, "ERROR");
+            }
+
         }
     }
 }

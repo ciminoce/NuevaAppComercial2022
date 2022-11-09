@@ -189,5 +189,24 @@ namespace NuevaAppComercial2022.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        public Cliente GetClientePorId(int id)
+        {
+            try
+            {
+                using (var cn = ConexionBd.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new ClientesRepositorio(cn);
+                    return repositorio.GetClientePorId(id);
+                }
+
+
+                
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

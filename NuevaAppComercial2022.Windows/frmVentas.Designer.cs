@@ -29,9 +29,9 @@ namespace NuevaAppComercial2022.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrillaPanel = new System.Windows.Forms.Panel();
             this.PaginacionPanel = new System.Windows.Forms.Panel();
             this.TotalPaginasTextBox = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@ namespace NuevaAppComercial2022.Windows
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolBarPanel = new System.Windows.Forms.Panel();
             this.DetalleIconButton = new FontAwesome.Sharp.IconButton();
+            this.ImprimirIonButton = new FontAwesome.Sharp.IconButton();
             this.PagarIconButton = new FontAwesome.Sharp.IconButton();
             this.ActualizarIconButton = new FontAwesome.Sharp.IconButton();
             this.FiltroClienteIconButton = new FontAwesome.Sharp.IconButton();
@@ -66,7 +67,7 @@ namespace NuevaAppComercial2022.Windows
             this.GrillaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrillaPanel.Location = new System.Drawing.Point(0, 100);
             this.GrillaPanel.Name = "GrillaPanel";
-            this.GrillaPanel.Size = new System.Drawing.Size(800, 350);
+            this.GrillaPanel.Size = new System.Drawing.Size(888, 350);
             this.GrillaPanel.TabIndex = 3;
             // 
             // PaginacionPanel
@@ -78,7 +79,7 @@ namespace NuevaAppComercial2022.Windows
             this.PaginacionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PaginacionPanel.Location = new System.Drawing.Point(0, 286);
             this.PaginacionPanel.Name = "PaginacionPanel";
-            this.PaginacionPanel.Size = new System.Drawing.Size(800, 64);
+            this.PaginacionPanel.Size = new System.Drawing.Size(888, 64);
             this.PaginacionPanel.TabIndex = 3;
             // 
             // TotalPaginasTextBox
@@ -86,7 +87,7 @@ namespace NuevaAppComercial2022.Windows
             this.TotalPaginasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalPaginasTextBox.Enabled = false;
             this.TotalPaginasTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPaginasTextBox.Location = new System.Drawing.Point(620, 23);
+            this.TotalPaginasTextBox.Location = new System.Drawing.Point(708, 23);
             this.TotalPaginasTextBox.Name = "TotalPaginasTextBox";
             this.TotalPaginasTextBox.Size = new System.Drawing.Size(42, 20);
             this.TotalPaginasTextBox.TabIndex = 2;
@@ -96,7 +97,7 @@ namespace NuevaAppComercial2022.Windows
             this.PaginasComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PaginasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PaginasComboBox.FormattingEnabled = true;
-            this.PaginasComboBox.Location = new System.Drawing.Point(544, 23);
+            this.PaginasComboBox.Location = new System.Drawing.Point(632, 23);
             this.PaginasComboBox.Name = "PaginasComboBox";
             this.PaginasComboBox.Size = new System.Drawing.Size(39, 21);
             this.PaginasComboBox.TabIndex = 1;
@@ -105,7 +106,7 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(589, 26);
+            this.label2.Location = new System.Drawing.Point(677, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 0;
@@ -115,7 +116,7 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(506, 26);
+            this.label1.Location = new System.Drawing.Point(594, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
@@ -125,20 +126,20 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.DatosDataGridView.AllowUserToAddRows = false;
             this.DatosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DatosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colVenta,
@@ -153,7 +154,7 @@ namespace NuevaAppComercial2022.Windows
             this.DatosDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDataGridView.RowTemplate.Height = 28;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(794, 280);
+            this.DatosDataGridView.Size = new System.Drawing.Size(882, 280);
             this.DatosDataGridView.TabIndex = 1;
             this.DatosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatosDataGridView_CellContentClick);
             this.DatosDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DatosDataGridView_RowHeaderMouseClick);
@@ -181,8 +182,8 @@ namespace NuevaAppComercial2022.Windows
             // 
             // colTotal
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colTotal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colTotal.DefaultCellStyle = dataGridViewCellStyle9;
             this.colTotal.HeaderText = "Total";
             this.colTotal.Name = "colTotal";
             this.colTotal.ReadOnly = true;
@@ -197,6 +198,7 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.ToolBarPanel.BackColor = System.Drawing.Color.RoyalBlue;
             this.ToolBarPanel.Controls.Add(this.DetalleIconButton);
+            this.ToolBarPanel.Controls.Add(this.ImprimirIonButton);
             this.ToolBarPanel.Controls.Add(this.PagarIconButton);
             this.ToolBarPanel.Controls.Add(this.ActualizarIconButton);
             this.ToolBarPanel.Controls.Add(this.FiltroClienteIconButton);
@@ -207,7 +209,7 @@ namespace NuevaAppComercial2022.Windows
             this.ToolBarPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ToolBarPanel.Location = new System.Drawing.Point(0, 0);
             this.ToolBarPanel.Name = "ToolBarPanel";
-            this.ToolBarPanel.Size = new System.Drawing.Size(800, 100);
+            this.ToolBarPanel.Size = new System.Drawing.Size(888, 100);
             this.ToolBarPanel.TabIndex = 2;
             // 
             // DetalleIconButton
@@ -225,6 +227,21 @@ namespace NuevaAppComercial2022.Windows
             this.DetalleIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.DetalleIconButton.UseVisualStyleBackColor = true;
             this.DetalleIconButton.Click += new System.EventHandler(this.DetalleIconButton_Click);
+            // 
+            // ImprimirIonButton
+            // 
+            this.ImprimirIonButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ImprimirIonButton.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.ImprimirIonButton.IconColor = System.Drawing.Color.White;
+            this.ImprimirIonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ImprimirIonButton.Location = new System.Drawing.Point(789, 19);
+            this.ImprimirIonButton.Name = "ImprimirIonButton";
+            this.ImprimirIonButton.Size = new System.Drawing.Size(87, 63);
+            this.ImprimirIonButton.TabIndex = 2;
+            this.ImprimirIonButton.Text = "Imprimir";
+            this.ImprimirIonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ImprimirIonButton.UseVisualStyleBackColor = true;
+            this.ImprimirIonButton.Click += new System.EventHandler(this.ImprimirIonButton_Click);
             // 
             // PagarIconButton
             // 
@@ -334,7 +351,7 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(888, 450);
             this.Controls.Add(this.GrillaPanel);
             this.Controls.Add(this.ToolBarPanel);
             this.Name = "frmVentas";
@@ -372,5 +389,6 @@ namespace NuevaAppComercial2022.Windows
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
         private FontAwesome.Sharp.IconButton PagarIconButton;
         private FontAwesome.Sharp.IconButton ActualizarIconButton;
+        private FontAwesome.Sharp.IconButton ImprimirIonButton;
     }
 }
