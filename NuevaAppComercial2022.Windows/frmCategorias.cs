@@ -206,6 +206,9 @@ namespace NuevaAppComercial2022.Windows
             }
         }
 
-
+        private void ImprimirIonButton_Click(object sender, EventArgs e)
+        {
+            HelperImprimir.ImprimirListadoCategorias(servicio.GetLista());
+        }
     }
 }

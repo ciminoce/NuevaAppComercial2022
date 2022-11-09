@@ -1,7 +1,7 @@
 ﻿
 namespace NuevaAppComercial2022.Windows
 {
-    partial class frmCategorias
+    partial class frmCtasCtes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,79 +29,76 @@ namespace NuevaAppComercial2022.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrillaPanel = new System.Windows.Forms.Panel();
-            this.DatosDataGridView = new System.Windows.Forms.DataGridView();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.cmnCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolBarPanel = new System.Windows.Forms.Panel();
             this.EditarIconButton = new FontAwesome.Sharp.IconButton();
             this.BorrarIconButton = new FontAwesome.Sharp.IconButton();
             this.NuevoIconButton = new FontAwesome.Sharp.IconButton();
+            this.DetalleIconButton = new FontAwesome.Sharp.IconButton();
+            this.PagarIconButton = new FontAwesome.Sharp.IconButton();
             this.ImprimirIonButton = new FontAwesome.Sharp.IconButton();
             this.GrillaPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.ToolBarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // GrillaPanel
             // 
-            this.GrillaPanel.Controls.Add(this.DatosDataGridView);
+            this.GrillaPanel.Controls.Add(this.dgvDatos);
             this.GrillaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrillaPanel.Location = new System.Drawing.Point(0, 100);
             this.GrillaPanel.Name = "GrillaPanel";
             this.GrillaPanel.Size = new System.Drawing.Size(800, 350);
-            this.GrillaPanel.TabIndex = 3;
+            this.GrillaPanel.TabIndex = 5;
             // 
-            // DatosDataGridView
+            // dgvDatos
             // 
-            this.DatosDataGridView.AllowUserToAddRows = false;
-            this.DatosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCategoria,
-            this.colDescripcion});
-            this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.DatosDataGridView.MultiSelect = false;
-            this.DatosDataGridView.Name = "DatosDataGridView";
-            this.DatosDataGridView.ReadOnly = true;
-            this.DatosDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatosDataGridView.RowTemplate.Height = 28;
-            this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(800, 350);
-            this.DatosDataGridView.TabIndex = 1;
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cmnCliente,
+            this.cmnSaldo});
+            this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDatos.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatos.MultiSelect = false;
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.RowHeadersVisible = false;
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(800, 350);
+            this.dgvDatos.TabIndex = 2;
             // 
-            // colCategoria
+            // cmnCliente
             // 
-            this.colCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
+            this.cmnCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmnCliente.HeaderText = "Cliente";
+            this.cmnCliente.Name = "cmnCliente";
+            this.cmnCliente.ReadOnly = true;
             // 
-            // colDescripcion
+            // cmnSaldo
             // 
-            this.colDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescripcion.HeaderText = "Descripción";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.ReadOnly = true;
+            this.cmnSaldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.cmnSaldo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.cmnSaldo.HeaderText = "Saldo";
+            this.cmnSaldo.Name = "cmnSaldo";
+            this.cmnSaldo.ReadOnly = true;
             // 
             // ToolBarPanel
             // 
             this.ToolBarPanel.BackColor = System.Drawing.Color.RoyalBlue;
             this.ToolBarPanel.Controls.Add(this.ImprimirIonButton);
+            this.ToolBarPanel.Controls.Add(this.PagarIconButton);
+            this.ToolBarPanel.Controls.Add(this.DetalleIconButton);
             this.ToolBarPanel.Controls.Add(this.EditarIconButton);
             this.ToolBarPanel.Controls.Add(this.BorrarIconButton);
             this.ToolBarPanel.Controls.Add(this.NuevoIconButton);
@@ -109,7 +106,7 @@ namespace NuevaAppComercial2022.Windows
             this.ToolBarPanel.Location = new System.Drawing.Point(0, 0);
             this.ToolBarPanel.Name = "ToolBarPanel";
             this.ToolBarPanel.Size = new System.Drawing.Size(800, 100);
-            this.ToolBarPanel.TabIndex = 2;
+            this.ToolBarPanel.TabIndex = 4;
             // 
             // EditarIconButton
             // 
@@ -124,7 +121,6 @@ namespace NuevaAppComercial2022.Windows
             this.EditarIconButton.Text = "Editar";
             this.EditarIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.EditarIconButton.UseVisualStyleBackColor = true;
-            this.EditarIconButton.Click += new System.EventHandler(this.EditarIconButton_Click);
             // 
             // BorrarIconButton
             // 
@@ -139,7 +135,6 @@ namespace NuevaAppComercial2022.Windows
             this.BorrarIconButton.Text = "Borrar";
             this.BorrarIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BorrarIconButton.UseVisualStyleBackColor = true;
-            this.BorrarIconButton.Click += new System.EventHandler(this.BorrarIconButton_Click);
             // 
             // NuevoIconButton
             // 
@@ -154,7 +149,35 @@ namespace NuevaAppComercial2022.Windows
             this.NuevoIconButton.Text = "Nuevo";
             this.NuevoIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.NuevoIconButton.UseVisualStyleBackColor = true;
-            this.NuevoIconButton.Click += new System.EventHandler(this.NuevoIconButton_Click);
+            // 
+            // DetalleIconButton
+            // 
+            this.DetalleIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DetalleIconButton.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.DetalleIconButton.IconColor = System.Drawing.Color.Green;
+            this.DetalleIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DetalleIconButton.Location = new System.Drawing.Point(245, 19);
+            this.DetalleIconButton.Name = "DetalleIconButton";
+            this.DetalleIconButton.Size = new System.Drawing.Size(62, 63);
+            this.DetalleIconButton.TabIndex = 6;
+            this.DetalleIconButton.Text = "Detalle";
+            this.DetalleIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DetalleIconButton.UseVisualStyleBackColor = true;
+            this.DetalleIconButton.Click += new System.EventHandler(this.DetalleIconButton_Click);
+            // 
+            // PagarIconButton
+            // 
+            this.PagarIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PagarIconButton.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.PagarIconButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PagarIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PagarIconButton.Location = new System.Drawing.Point(357, 19);
+            this.PagarIconButton.Name = "PagarIconButton";
+            this.PagarIconButton.Size = new System.Drawing.Size(87, 63);
+            this.PagarIconButton.TabIndex = 7;
+            this.PagarIconButton.Text = "Pagar";
+            this.PagarIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PagarIconButton.UseVisualStyleBackColor = true;
             // 
             // ImprimirIonButton
             // 
@@ -162,27 +185,26 @@ namespace NuevaAppComercial2022.Windows
             this.ImprimirIonButton.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.ImprimirIonButton.IconColor = System.Drawing.Color.White;
             this.ImprimirIonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ImprimirIonButton.Location = new System.Drawing.Point(485, 19);
+            this.ImprimirIonButton.Location = new System.Drawing.Point(503, 19);
             this.ImprimirIonButton.Name = "ImprimirIonButton";
             this.ImprimirIonButton.Size = new System.Drawing.Size(87, 63);
-            this.ImprimirIonButton.TabIndex = 6;
+            this.ImprimirIonButton.TabIndex = 8;
             this.ImprimirIonButton.Text = "Imprimir";
             this.ImprimirIonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ImprimirIonButton.UseVisualStyleBackColor = true;
-            this.ImprimirIonButton.Click += new System.EventHandler(this.ImprimirIonButton_Click);
             // 
-            // frmCategorias
+            // frmCtasCtes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.GrillaPanel);
             this.Controls.Add(this.ToolBarPanel);
-            this.Name = "frmCategorias";
-            this.Text = "frmCategorias2";
-            this.Load += new System.EventHandler(this.frmCategorias_Load);
+            this.Name = "frmCtasCtes";
+            this.Text = "frmCtasCtes";
+            this.Load += new System.EventHandler(this.frmCtasCtes_Load);
             this.GrillaPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ToolBarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -191,13 +213,15 @@ namespace NuevaAppComercial2022.Windows
         #endregion
 
         private System.Windows.Forms.Panel GrillaPanel;
-        private System.Windows.Forms.DataGridView DatosDataGridView;
         private System.Windows.Forms.Panel ToolBarPanel;
         private FontAwesome.Sharp.IconButton EditarIconButton;
         private FontAwesome.Sharp.IconButton BorrarIconButton;
         private FontAwesome.Sharp.IconButton NuevoIconButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescripcion;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmnCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmnSaldo;
+        private FontAwesome.Sharp.IconButton DetalleIconButton;
+        private FontAwesome.Sharp.IconButton PagarIconButton;
         private FontAwesome.Sharp.IconButton ImprimirIonButton;
     }
 }

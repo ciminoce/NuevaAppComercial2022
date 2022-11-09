@@ -40,6 +40,7 @@ namespace NuevaAppComercial2022.Windows
             this.ComprasMenu = new FontAwesome.Sharp.IconMenuItem();
             this.VentasMenu = new FontAwesome.Sharp.IconMenuItem();
             this.ReportesMenu = new FontAwesome.Sharp.IconMenuItem();
+            this.CtaCteMenu = new FontAwesome.Sharp.IconMenuItem();
             this.TituloMenuStrip = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedorPanel = new System.Windows.Forms.Panel();
@@ -62,7 +63,8 @@ namespace NuevaAppComercial2022.Windows
             this.ProductosMenu,
             this.ComprasMenu,
             this.VentasMenu,
-            this.ReportesMenu});
+            this.ReportesMenu,
+            this.CtaCteMenu});
             this.BarraMenuStrip.Location = new System.Drawing.Point(0, 64);
             this.BarraMenuStrip.Name = "BarraMenuStrip";
             this.BarraMenuStrip.Size = new System.Drawing.Size(1084, 73);
@@ -206,6 +208,20 @@ namespace NuevaAppComercial2022.Windows
             this.ReportesMenu.Text = "Reportes";
             this.ReportesMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // CtaCteMenu
+            // 
+            this.CtaCteMenu.AutoSize = false;
+            this.CtaCteMenu.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.CtaCteMenu.IconColor = System.Drawing.Color.Black;
+            this.CtaCteMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.CtaCteMenu.IconSize = 50;
+            this.CtaCteMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.CtaCteMenu.Name = "CtaCteMenu";
+            this.CtaCteMenu.Size = new System.Drawing.Size(122, 69);
+            this.CtaCteMenu.Text = "CtaCte";
+            this.CtaCteMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.CtaCteMenu.Click += new System.EventHandler(this.CtaCteMenu_Click);
+            // 
             // TituloMenuStrip
             // 
             this.TituloMenuStrip.AutoSize = false;
@@ -337,6 +353,7 @@ namespace NuevaAppComercial2022.Windows
         private System.Windows.Forms.Label UsuarioLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label RolLabel;
+        private FontAwesome.Sharp.IconMenuItem CtaCteMenu;
     }
 }
 

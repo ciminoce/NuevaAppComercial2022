@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -41,6 +44,77 @@ namespace NuevaAppComercial2022.Windows.Helpers
 
 
 
+            GuardarPdfImagen(completo, PaginaHTML_Texto);
+
+        }
+
+        public static void ImprimirListadoCategorias(List<Categoria> lista)
+        {
+            var rutaArchivo = Environment.CurrentDirectory + "\\Temp\\";
+            var nombreArchivo = "ListadoDeCatgorias.pdf";
+            var completo = $"{rutaArchivo}{nombreArchivo}";
+
+
+            //string PaginaHTML_Texto = "<table border=\"1\"><tr><td>HOLA MUNDO</td></tr></table>";
+            string PaginaHTML_Texto = Properties.Resources.ListadoCategorias.ToString();
+
+            string filas = string.Empty;
+
+            foreach (var categoria in lista)
+            {
+                filas += "<tr>";
+                filas += "<td>" + categoria.NombreCategoria + "</td>";
+                filas += "<td>" + categoria.Descripcion+ "</td>";
+                filas += "</tr>";
+
+            }
+
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@cantidad", lista.Count.ToString());
+
+
+
+            GuardarPdfImagen(completo,PaginaHTML_Texto);
+        }
+
+        public static void ImprimirCtaCte(List<CtaCte> lista)
+        {
+            var rutaArchivo = Environment.CurrentDirectory + "\\Temp\\";
+            var nombreArchivo = string.Format("Lista de CtaCte de {0}.pdf", lista[0].Cliente.Nombre);
+            var completo = $"{rutaArchivo}{nombreArchivo}";
+
+
+            //string PaginaHTML_Texto = "<table border=\"1\"><tr><td>HOLA MUNDO</td></tr></table>";
+            string PaginaHTML_Texto = Properties.Resources.ListadoDeCtaCte.ToString();
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", lista[0].Cliente.Nombre);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DIRECCION", lista[0].Cliente.Direccion);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", DateTime.Today.ToShortDateString());
+
+            string filas = string.Empty;
+
+            foreach (var mov in lista)
+            {
+                filas += "<tr>";
+                filas += "<td>" + mov.FechaMovimiento.ToShortDateString() + "</td>";
+                filas += "<td>" + mov.Movimiento + "</td>";
+                filas += "<td>" + mov.Debe + "</td>";
+                filas += "<td>" + mov.Haber + "</td>";
+                filas += "<td>" + mov.Saldo + "</td>";
+                filas += "</tr>";
+
+            }
+
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FILAS", filas);
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@TOTAL", lista.Sum(m=>m.Debe-m.Haber).ToString());
+
+
+
+            GuardarPdfImagen(completo, PaginaHTML_Texto);
+
+        }
+
+        private static void GuardarPdfImagen(string completo, string PaginaHTML_Texto)
+        {
             using (FileStream stream = new FileStream(completo, FileMode.Create))
             {
                 //Creamos un nuevo documento y lo definimos como PDF
@@ -69,9 +143,8 @@ namespace NuevaAppComercial2022.Windows.Helpers
 
                 pdfDoc.Close();
                 stream.Close();
-                Process.Start($"{completo}");//Muestra la factura
+                Process.Start($"{completo}"); //Muestra la factura
             }
-
         }
     }
 }

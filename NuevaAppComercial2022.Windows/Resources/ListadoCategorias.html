@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Title of the document</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+            table.border th {
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+            table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="width:20%"></td>
+            <td style="width:60%" align="center" valign="top">
+                <table>
+                    <tr><td align="center"><h4 style="margin:0px">Instituto 43</h4></td></tr>
+                    <tr><td align="center">Direccion: Santamarina s/n Lobos</td></tr>
+                    <tr><td align="center">Telefono: 567-546-55</td></tr>
+                </table>
+            </td>
+            
+        </tr>
+
+        <tr><td colspan="3" height="20"></td></tr>
+      
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%;">
+                    <thead>
+                        <tr style="background-color:#D8D8D8">
+                            <th>Categoría</th>
+                            <th>Descripcion</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr>
+                            <td>1</td>
+                            <td>sdafsda</td>
+                            <td>2.4</td>
+                            <td>2.4</td>
+                        </tr>-->
+                        @FILAS
+                        <tr>
+                            <td align="right">Cantidad:</td>
+                            <td>@cantidad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

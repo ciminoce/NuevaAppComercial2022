@@ -29,8 +29,8 @@ namespace NuevaAppComercial2022.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrillaPanel = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +47,9 @@ namespace NuevaAppComercial2022.Windows
             this.EditarIconButton = new FontAwesome.Sharp.IconButton();
             this.BorrarIconButton = new FontAwesome.Sharp.IconButton();
             this.NuevoIconButton = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ClienteBuscarTextBox = new System.Windows.Forms.TextBox();
             this.GrillaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
             this.ToolBarPanel.SuspendLayout();
@@ -65,17 +68,17 @@ namespace NuevaAppComercial2022.Windows
             // 
             this.DatosDataGridView.AllowUserToAddRows = false;
             this.DatosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCliente,
@@ -133,10 +136,13 @@ namespace NuevaAppComercial2022.Windows
             // ToolBarPanel
             // 
             this.ToolBarPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ToolBarPanel.Controls.Add(this.ClienteBuscarTextBox);
+            this.ToolBarPanel.Controls.Add(this.label1);
             this.ToolBarPanel.Controls.Add(this.UltimoIconButton);
             this.ToolBarPanel.Controls.Add(this.SiguienteIconButton);
             this.ToolBarPanel.Controls.Add(this.AnteriorIconButton);
             this.ToolBarPanel.Controls.Add(this.PrimeroIconButton);
+            this.ToolBarPanel.Controls.Add(this.iconButton1);
             this.ToolBarPanel.Controls.Add(this.FiltroIconButton);
             this.ToolBarPanel.Controls.Add(this.EditarIconButton);
             this.ToolBarPanel.Controls.Add(this.BorrarIconButton);
@@ -267,6 +273,38 @@ namespace NuevaAppComercial2022.Windows
             this.NuevoIconButton.UseVisualStyleBackColor = true;
             this.NuevoIconButton.Click += new System.EventHandler(this.NuevoIconButton_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(320, 19);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(62, 63);
+            this.iconButton1.TabIndex = 2;
+            this.iconButton1.Text = "Buscar";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(403, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Cliente:";
+            // 
+            // ClienteBuscarTextBox
+            // 
+            this.ClienteBuscarTextBox.Enabled = false;
+            this.ClienteBuscarTextBox.Location = new System.Drawing.Point(451, 40);
+            this.ClienteBuscarTextBox.Name = "ClienteBuscarTextBox";
+            this.ClienteBuscarTextBox.Size = new System.Drawing.Size(245, 20);
+            this.ClienteBuscarTextBox.TabIndex = 7;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +318,7 @@ namespace NuevaAppComercial2022.Windows
             this.GrillaPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.ToolBarPanel.ResumeLayout(false);
+            this.ToolBarPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -302,5 +341,8 @@ namespace NuevaAppComercial2022.Windows
         private FontAwesome.Sharp.IconButton SiguienteIconButton;
         private FontAwesome.Sharp.IconButton AnteriorIconButton;
         private FontAwesome.Sharp.IconButton PrimeroIconButton;
+        private System.Windows.Forms.TextBox ClienteBuscarTextBox;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

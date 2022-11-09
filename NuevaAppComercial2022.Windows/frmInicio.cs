@@ -143,5 +143,11 @@ namespace NuevaAppComercial2022.Windows
         {
             AbrirFormulario((IconMenuItem)sender, new frmVentas());
         }
+
+        private void CtaCteMenu_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmCtasCtes());
+
+        }
     }
 }

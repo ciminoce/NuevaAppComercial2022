@@ -45,6 +45,7 @@
     <Compile Include="Servicios\CategoriasServicios.cs" />
     <Compile Include="Servicios\CiudadesServicios.cs" />
     <Compile Include="Servicios\ClientesServicios.cs" />
+    <Compile Include="Servicios\CtaCteServicio.cs" />
     <Compile Include="Servicios\PaisesServicios.cs" />
     <Compile Include="Servicios\ProductosServicios.cs" />
     <Compile Include="Servicios\ProveedoresServicios.cs" />

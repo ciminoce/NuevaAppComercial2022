@@ -19,39 +19,43 @@ namespace NuevaAppComercial2022.Datos.Repositorios
 
         public CtasCteRepositorio(SqlConnection sqlConnection, SqlTransaction tran)
         {
-            this.cn = cn;
+            this.cn = sqlConnection;
             this.tran = tran;
         }
 
-        //public List<ConsultaCtaCte> GetSaldos()
-        //{
-        //    try
-        //    {
-        //        var lista = new List<ConsultaCtaCte>();
-        //        using (var cn = ConexionBd.GetInstancia().AbricConexion())
-        //        {
-        //            string strComando = "SELECT ClienteId, SUM(Debe-Haber) as Saldo FROM CtasCtes GROUP BY  ClienteId";
-        //            SqlCommand comando = new SqlCommand(strComando, cn);
-        //            SqlDataReader reader = comando.ExecuteReader();
-        //            while (reader.Read())
-        //            {
-        //                ConsultaCtaCte consulta = new ConsultaCtaCte
-        //                {
-        //                    Cliente = RepositorioClientes.GetInstancia().GetObjetoPorId(reader.GetInt32(0)),
-        //                    Saldo = reader.GetDecimal(1)
-        //                };
-        //                lista.Add(consulta);
-        //            }
-        //            return lista;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+        public List<CtaCte> GetSaldos()
+        {
+            try
+            {
+                var lista = new List<CtaCte>();
 
-        //        throw ex;
-        //    }
+                string strComando = "SELECT ClienteId, SUM(Debe-Haber) as Saldo FROM CtasCtes GROUP BY  ClienteId";
+                using (var comando = new SqlCommand(strComando, cn))
+                {
+                    using (var reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var cta = new CtaCte
+                            {
+                                ClienteId = reader.GetInt32(0),
+                                Saldo = reader.GetDecimal(1)
+                            };
+                            lista.Add(cta);
+                        }
+                    }
+                }
 
-        //}
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
 
         public void Agregar(CtaCte cta)
         {
@@ -118,15 +122,22 @@ namespace NuevaAppComercial2022.Datos.Repositorios
             {
                 var lista = new List<CtaCte>();
 
-                string strComando = "SELECT FechaMovimiento, Movimiento, Debe, Haber, Saldo FROM CtasCtes WHERE ClienteId=@id ORDER BY FechaMovimiento ";
-                SqlCommand comando = new SqlCommand(strComando, cn);
-                comando.Parameters.AddWithValue("@id", clienteId);
-                SqlDataReader reader = comando.ExecuteReader();
-                while (reader.Read())
+                string strComando = "SELECT FechaMovimiento, Movimiento, Debe, Haber, Saldo, ClienteId FROM CtasCtes WHERE ClienteId=@id ORDER BY FechaMovimiento ";
+                using (var comando = new SqlCommand(strComando, cn))
                 {
-                    CtaCte cta = ConstruirCtaCte(reader);
-                    lista.Add(cta);
+                    comando.Parameters.AddWithValue("@id", clienteId);
+                    using (var reader = comando.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CtaCte cta = ConstruirCtaCte(reader);
+                            lista.Add(cta);
+                        }
+
+                    }
+
                 }
+            
                 return lista;
 
             }
@@ -136,59 +147,60 @@ namespace NuevaAppComercial2022.Datos.Repositorios
                 throw ex;
             }
 
-        }
+}
 
-        private CtaCte ConstruirCtaCte(SqlDataReader reader)
-        {
-            return new CtaCte
-            {
-                FechaMovimiento = reader.GetDateTime(0),
-                Movimiento = reader.GetString(1),
-                Debe = reader.GetDecimal(2),
-                Haber = reader.GetDecimal(3),
-                Saldo = reader.GetDecimal(4)
+private CtaCte ConstruirCtaCte(SqlDataReader reader)
+{
+    return new CtaCte
+    {
+        FechaMovimiento = reader.GetDateTime(0),
+        Movimiento = reader.GetString(1),
+        Debe = reader.GetDecimal(2),
+        Haber = reader.GetDecimal(3),
+        Saldo = reader.GetDecimal(4),
+        ClienteId = reader.GetInt32(5)
 
-            };
-        }
+    };
+}
 
-        public decimal GetSaldo(int clienteId, SqlConnection cnn, SqlTransaction tran)
-        {
-            try
-            {
-                string strComando = "SELECT Saldo FROM CtasCtes WHERE ClienteId=@id AND CtaCteId=(" +
-                                    "SELECT MAX(CtaCteId) FROM CtasCtes WHERE ClienteId=@id)";
-                SqlCommand comando = new SqlCommand(strComando, cnn, tran);
-                comando.Parameters.AddWithValue("@id", clienteId);
-                decimal saldo = comando.ExecuteScalar() == null ? 0 : (decimal)comando.ExecuteScalar();
-                return saldo;
-            }
-            catch (Exception ex)
-            {
+public decimal GetSaldo(int clienteId, SqlConnection cnn, SqlTransaction tran)
+{
+    try
+    {
+        string strComando = "SELECT Saldo FROM CtasCtes WHERE ClienteId=@id AND CtaCteId=(" +
+                            "SELECT MAX(CtaCteId) FROM CtasCtes WHERE ClienteId=@id)";
+        SqlCommand comando = new SqlCommand(strComando, cnn, tran);
+        comando.Parameters.AddWithValue("@id", clienteId);
+        decimal saldo = comando.ExecuteScalar() == null ? 0 : (decimal)comando.ExecuteScalar();
+        return saldo;
+    }
+    catch (Exception ex)
+    {
 
-                throw ex;
-            }
-        }
+        throw ex;
+    }
+}
 
-        public decimal GetSaldo(Cliente cliente)
-        {
+public decimal GetSaldo(Cliente cliente)
+{
 
-            try
-            {
-                string strComando = "SELECT Saldo FROM CtasCtes WHERE ClienteId=@id AND CtaCteId=(" +
-                                    "SELECT MAX(CtaCteId) FROM CtasCtes WHERE ClienteId=@id)";
-                SqlCommand comando = new SqlCommand(strComando, cn);
-                comando.Parameters.AddWithValue("@id", cliente.Id);
-                decimal saldo = comando.ExecuteScalar() == null ? 0 : (decimal)comando.ExecuteScalar();
-                return saldo;
-            }
-            catch (Exception ex)
-            {
+    try
+    {
+        string strComando = "SELECT Saldo FROM CtasCtes WHERE ClienteId=@id AND CtaCteId=(" +
+                            "SELECT MAX(CtaCteId) FROM CtasCtes WHERE ClienteId=@id)";
+        SqlCommand comando = new SqlCommand(strComando, cn);
+        comando.Parameters.AddWithValue("@id", cliente.Id);
+        decimal saldo = comando.ExecuteScalar() == null ? 0 : (decimal)comando.ExecuteScalar();
+        return saldo;
+    }
+    catch (Exception ex)
+    {
 
-                throw ex;
-            }
+        throw ex;
+    }
 
 
-        }
+}
 
 
     }
