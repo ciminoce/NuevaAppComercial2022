@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
@@ -33,10 +34,10 @@ namespace NuevaAppComercial2022.Windows.Helpers
             foreach (var item in venta.Detalles)
             {
                 filas += "<tr>";
-                filas += "<td>" + item.Cantidad.ToString() + "</td>";
+                filas += "<td align=\"right\">" + item.Cantidad.ToString() + "</td>";
                 filas += "<td>" + item.Producto.NombreProducto + "</td>";
-                filas += "<td>" + item.PrecioUnitario.ToString() + "</td>";
-                filas += "<td>" + (item.Cantidad * item.PrecioUnitario).ToString() + "</td>";
+                filas += "<td align=\"right\">" + item.PrecioUnitario.ToString() + "</td>";
+                filas += "<td align=\"right\">" + (item.Cantidad * item.PrecioUnitario).ToString() + "</td>";
                 filas += "</tr>";
                 
             }
