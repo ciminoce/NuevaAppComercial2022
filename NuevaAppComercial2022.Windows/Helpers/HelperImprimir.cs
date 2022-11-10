@@ -22,6 +22,8 @@ namespace NuevaAppComercial2022.Windows.Helpers
 
             //string PaginaHTML_Texto = "<table border=\"1\"><tr><td>HOLA MUNDO</td></tr></table>";
             string PaginaHTML_Texto = Properties.Resources.Factura.ToString();
+            PaginaHTML_Texto = PaginaHTML_Texto.Replace("@NROFACT", venta.VentaId.ToString().PadLeft(8,'0'));
+
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@CLIENTE", venta.Cliente.Nombre);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@DIRECCION", venta.Cliente.Direccion);
             PaginaHTML_Texto = PaginaHTML_Texto.Replace("@FECHA", venta.FechaVenta.ToShortDateString());
