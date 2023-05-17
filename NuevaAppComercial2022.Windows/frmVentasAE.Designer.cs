@@ -74,9 +74,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.CarritoDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1017, 524);
-            this.splitContainer1.SplitterDistance = 605;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.Size = new System.Drawing.Size(874, 649);
+            this.splitContainer1.SplitterDistance = 519;
+            this.splitContainer1.TabIndex = 1;
             // 
             // ProductoFlowLayoutPanel
             // 
@@ -84,9 +84,8 @@
             this.ProductoFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductoFlowLayoutPanel.Location = new System.Drawing.Point(0, 54);
             this.ProductoFlowLayoutPanel.Name = "ProductoFlowLayoutPanel";
-            this.ProductoFlowLayoutPanel.Size = new System.Drawing.Size(605, 470);
+            this.ProductoFlowLayoutPanel.Size = new System.Drawing.Size(519, 595);
             this.ProductoFlowLayoutPanel.TabIndex = 1;
-            this.ProductoFlowLayoutPanel.MouseEnter += new System.EventHandler(this.ProductoFlowLayoutPanel_MouseEnter);
             // 
             // panel1
             // 
@@ -96,7 +95,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 54);
+            this.panel1.Size = new System.Drawing.Size(519, 54);
             this.panel1.TabIndex = 0;
             // 
             // CategoriasComboBox
@@ -107,7 +106,6 @@
             this.CategoriasComboBox.Name = "CategoriasComboBox";
             this.CategoriasComboBox.Size = new System.Drawing.Size(205, 21);
             this.CategoriasComboBox.TabIndex = 1;
-            this.CategoriasComboBox.SelectedValueChanged += new System.EventHandler(this.CategoriasComboBox_SelectedValueChanged);
             // 
             // label1
             // 
@@ -129,9 +127,9 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 434);
+            this.panel3.Location = new System.Drawing.Point(0, 559);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(408, 90);
+            this.panel3.Size = new System.Drawing.Size(351, 90);
             this.panel3.TabIndex = 2;
             // 
             // CancelarIconButton
@@ -148,7 +146,6 @@
             this.CancelarIconButton.Text = "Cancelar";
             this.CancelarIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CancelarIconButton.UseVisualStyleBackColor = false;
-            this.CancelarIconButton.Click += new System.EventHandler(this.CancelarIconButton_Click);
             // 
             // OKIconButton
             // 
@@ -164,7 +161,6 @@
             this.OKIconButton.Text = "Guardar";
             this.OKIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.OKIconButton.UseVisualStyleBackColor = false;
-            this.OKIconButton.Click += new System.EventHandler(this.OKIconButton_Click);
             // 
             // TotalLabel
             // 
@@ -223,9 +219,8 @@
             this.CarritoDataGridView.Name = "CarritoDataGridView";
             this.CarritoDataGridView.ReadOnly = true;
             this.CarritoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CarritoDataGridView.Size = new System.Drawing.Size(402, 368);
+            this.CarritoDataGridView.Size = new System.Drawing.Size(345, 493);
             this.CarritoDataGridView.TabIndex = 1;
-            this.CarritoDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarritoDataGridView_CellContentClick);
             // 
             // colProducto
             // 
@@ -274,7 +269,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(408, 54);
+            this.panel2.Size = new System.Drawing.Size(351, 54);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -291,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 524);
+            this.ClientSize = new System.Drawing.Size(874, 649);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmVentasAE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -319,19 +314,19 @@
         private System.Windows.Forms.ComboBox CategoriasComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton CancelarIconButton;
+        private FontAwesome.Sharp.IconButton OKIconButton;
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Label CantidadLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView CarritoDataGridView;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton CancelarIconButton;
-        private FontAwesome.Sharp.IconButton OKIconButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
         private System.Windows.Forms.DataGridViewImageColumn colBorrar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
     }
 }

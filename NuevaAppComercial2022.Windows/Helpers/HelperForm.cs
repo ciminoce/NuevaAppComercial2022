@@ -6,7 +6,7 @@ namespace NuevaAppComercial2022.Windows.Helpers
 {
     public static class HelperForm
     {
-        public static void MostrarDatosEnGrilla<T>(DataGridView dataGrid, List<T> lista)
+        public static void MostrarDatosEnGrilla<T>(DataGridView dataGrid, List<T> lista) where T:class
         {
             HelperGrid.LimpiarGrilla(dataGrid);
             foreach (var obj in lista)

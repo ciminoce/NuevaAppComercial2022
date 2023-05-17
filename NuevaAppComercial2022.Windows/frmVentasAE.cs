@@ -118,66 +118,21 @@ namespace NuevaAppComercial2022.Windows
             TotalLabel.Text = Carrito.GetInstancia().GetTotal().ToString("C");
         }
 
-        private void ProductoFlowLayoutPanel_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
         private Categoria categoria = null;
 
         private void CategoriasComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CategoriasComboBox.SelectedIndex > 0)
-            {
-                categoria = (Categoria)CategoriasComboBox.SelectedItem;
-            }
-            else
-            {
-                categoria = null;
-            }
 
-            lista = servicioProducto.GetLista(categoria);
-            MostrarProductosEnLayout();
         }
 
         private void CancelarIconButton_Click(object sender, EventArgs e)
         {
-            //Restauro las cantidades de UnidadesEnPedido
-            foreach (var itemCarrito in Carrito.GetInstancia().GetItems())
-            {
-                servicioProducto.ActualizarUnidadesEnPedido(itemCarrito.ProductoId, -itemCarrito.Cantidad);
-            }
-
-            Carrito.GetInstancia().LimpiarCarrito(); //Vacío el carrito
-            DialogResult = DialogResult.Cancel;
 
         }
 
         private Venta venta;
         private void OKIconButton_Click(object sender, EventArgs e)
         {
-            if (Carrito.GetInstancia().GetCantidad() == 0)
-            {
-                return;
-            }
-
-            frmSeleccionarCliente frm = new frmSeleccionarCliente();
-            DialogResult dr = frm.ShowDialog(this);
-            if (dr == DialogResult.Cancel)
-            {
-                return;
-            }
-
-            Cliente cliente = frm.GetCliente();
-            venta = new Venta()
-            {
-                ClienteId = cliente.Id,
-                FechaVenta = DateTime.Now,
-                Estado = Estado.Impaga,
-                Total=Carrito.GetInstancia().GetTotal(),
-                Detalles = CargarDetalles()
-            };
-            DialogResult = DialogResult.OK;
 
         }
         private List<DetalleVenta> CargarDetalles()
@@ -204,29 +159,7 @@ namespace NuevaAppComercial2022.Windows
 
         private void CarritoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex==4)
-            {
-                var r = CarritoDataGridView.SelectedRows[0];
-                ItemCarrito item=r.Tag as ItemCarrito;
-                Carrito.GetInstancia().QuitarItem(item);
-                HelperForm.MostrarDatosEnGrilla(CarritoDataGridView, Carrito.GetInstancia().GetItems());
-                servicioProducto.ActualizarUnidadesEnPedido(item.ProductoId,-item.Cantidad);
-                MostrarTotalesCarrito();
 
-                var producto = servicioProducto.GetProductoPorId(item.ProductoId);
-
-                ucProducto ucSeleccionado =
-                    (ucProducto)ProductoFlowLayoutPanel.Controls.Find(producto.ProductoId.ToString(), true)[0];
-                ucSeleccionado.Stock = $"Unidades: {producto.UnidadesDisponibles().ToString()}";
-                ((ucProducto)ProductoFlowLayoutPanel.Controls.Find(producto.ProductoId.ToString(), true)[0]).StockLabel
-                    .Text = $"Unidades: {producto.UnidadesDisponibles().ToString()}";
-                if (producto.UnidadesDisponibles() == 0)
-                {
-                    ucSeleccionado.Enabled = false;
-                    ucSeleccionado.BackColor = Color.Yellow;
-                }
-
-            }
         }
     }
 }
